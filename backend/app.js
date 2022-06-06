@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const PORT = 3300
 require("./helpers/dbCon")
+const { authUser } = require("./middleware/authentication")
 const noteRoutes = require("./routes/noteRoutes")
 const userRoutes = require("./routes/userRoutes")
 
@@ -14,7 +15,7 @@ app.get("/", (req, res) => {
 })
 
 // Base route for notes
-app.use("/api/notes", noteRoutes)
+app.use("/api/notes", authUser, noteRoutes)
 
 // Base route for user
 app.use("/api/users", userRoutes)

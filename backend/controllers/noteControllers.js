@@ -2,6 +2,7 @@ const Note = require("../models/noteModel")
 
 // Get all notes of the user
 exports.getAllNotesUser = async (req, res) => {
+
     try {
         // Find all notes of the user
         const notes = await Note.find()
