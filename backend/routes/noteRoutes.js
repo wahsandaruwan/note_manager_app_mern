@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const { getAllNotesUser, addNewNote, getNoteById, updateNote, deleteNoteById, getNotesBySearch } = require("../controllers/noteController")
+const { getAllNotesUser, addNewNote, getNoteById, updateNote, deleteNoteById, getNotesBySearch } = require("../controllers/noteControllers")
 
 // Get all notes of the user
 router.get("/", getAllNotesUser)

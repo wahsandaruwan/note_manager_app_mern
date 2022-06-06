@@ -3,6 +3,7 @@ const app = express()
 const PORT = 3300
 require("./helpers/dbCon")
 const noteRoutes = require("./routes/noteRoutes")
+const userRoutes = require("./routes/userRoutes")
 
 // Common middleware
 app.use(express.json())
@@ -14,6 +15,9 @@ app.get("/", (req, res) => {
 
 // Base route for notes
 app.use("/api/notes", noteRoutes)
+
+// Base route for user
+app.use("/api/users", userRoutes)
 
 // Route for wrong urls
 app.use((req, res) => {
