@@ -11,13 +11,13 @@ exports.validateName = (name) => {
 }
 
 // Validate username
-exports.validateUsername = (username) => {
+exports.validateUserName = (username) => {
     const regEx = /^[a-zA-Z0-9]+$/
     return regEx.test(username)
 }
 
 // Validate email
 exports.validateEmail = (email) => {
-    const regEx = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9\.]{2,}+$/
+    const regEx = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9\.]{2,}$/
     return regEx.test(email)
 }

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const { validateName, validateEmail, validateUsername } = require("../helpers/customValidation")
+const { validateName, validateEmail, validateUserName } = require("../helpers/customValidation")
 
 // Create user schema
 const userSchema = new mongoose.Schema(
@@ -18,18 +18,18 @@ const userSchema = new mongoose.Schema(
             maxLength: [150, "Maximum length of the email would be 150 characters."],
             validate: [validateEmail, "Enter a valid email."]
         },
-        username: {
+        userName: {
             type: String,
             required: [true, "Enter username."],
             minLength: [5, "Minimum length of the username would be 5 characters."],
             maxLength: [20, "Maximum length of the username would be 20 characters."],
-            validate: [validateUsername, "Enter username only using letters & numbers."]
+            validate: [validateUserName, "Enter username only using letters & numbers."]
         },
         password: {
             type: String,
             required: [true, "Enter password."],
             minLength: [8, "Minimum length of the username would be 8 characters."],
-            maxLength: [50, "Maximum length of the username would be 50 characters."]
+            maxLength: [150, "Maximum length of the username would be 150 characters."]
         }
     },
     {
