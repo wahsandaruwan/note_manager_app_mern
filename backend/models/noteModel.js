@@ -9,7 +9,7 @@ const noteSchema = new mongoose.Schema(
             required: [true, "Enter a title."],
             minLength: [5, "Minimum length of the title would be 5 characters."],
             maxLength: [20, "Maximum length of the title would be 20 characters."],
-            validate: [validateTitle, "Enter title only using letters & numbers."]
+            validate: [validateTitle, "Enter title only using letters numbers & spaces."]
         },
         details: {
             type: String,
