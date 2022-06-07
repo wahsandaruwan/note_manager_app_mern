@@ -8,6 +8,7 @@ exports.authUser = (req, res, next) => {
         const accessToken = authHeader.split("Bearer ")[1]
         if (accessToken) {
             try {
+                // Verify access token
                 const user = jwt.verify(accessToken, process.env.ACCESS_SECRET_KEY)
                 req.user = user
                 return next()
